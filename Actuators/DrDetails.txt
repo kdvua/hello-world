@@ -6,3 +6,14 @@ Output(SEC): 12 VDC, 400mA, --> 4.8W
 Motor:
 HRS-385S-12V
 DC 12V
+
+Driver TB6612FNG
+
+    Motor PS Voltage(VMOT): 4,5..13,5 VDC
+    Control logic Voltage (VCC): 2,7..5,5 V
+    Max current (per channel): 3 А 
+    Max continual curent (perchannel): 1 А 
+		(2 channels could be used in parallel to get 2A)
+    Max PWM frequency: 100 kHz
+   
+	Dimensions: 20 * 20 mm
