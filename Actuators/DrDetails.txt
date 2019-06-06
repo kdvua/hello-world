@@ -17,3 +17,46 @@ Driver TB6612FNG
     Max PWM frequency: 100 kHz
    
 	Dimensions: 20 * 20 mm
+
+PCA9685
+Power Pins
+
+    GND - This is the power and signal ground pin, must be connected
+    
+	VCC - This is the logic power pin, connect this to the logic level you want to , should be 3 - 5V max! It's also used for the 10K pullups on SCL/SDA so unless you have your own pullups, have it match the microcontroller's logic level too!
+    
+	V+ - This is an optional power pin that will supply distributed power to the servos. If you are not using for servos you can leave disconnected. It is not used at all by the chip. You can also inject power from the 2-pin terminal block at the top of the board. You should provide 5-6VDC if you are using servos. If you have to, you can go higher to 12VDC, but if you mess up and connect VCC to V+ you could damage your board!
+
+Control Pins
+
+    SCL - I2C clock pin, connect to your microcontrollers I2C clock line. Can use 3V or 5V logic, and has a weak pullup to VCC
+
+    SDA - I2C data pin, connect to your microcontrollers I2C data line. Can use 3V or 5V logic, and has a weak pullup to VCC
+
+    OE - Output enable. Can be used to quickly disable all outputs. When this pin is low all pins are enabled. When the pin is high the outputs are disabled. Pulled low by default so it's an optional pin!
+
+Connecting to the Arduino
+The PWM/Servo Driver uses I2C so it take only 4 wires to connect to your Arduino:
+
+"Classic" Arduino wiring:
+
+    +5v -> VCC (this is power for the BREAKOUT only, NOT the servo power!)
+    GND -> GND
+    Analog 4 -> SDA
+    Analog 5 -> SCL
+
+Older Mega wiring:
+
+    +5v -> VCC (this is power for the BREAKOUT only, NOT the servo power!)
+    GND -> GND
+    Digital 20 -> SDA
+    Digital 21 -> SCL
+
+R3 and later Arduino wiring (Uno, Mega & Leonardo):
+(These boards have dedicated SDA & SCL pins on the header nearest the USB connector)
+
+    +5v -> VCC (this is power for the BREAKOUT only, NOT the servo power!)
+    GND -> GND
+    SDA -> SDA
+    SCL -> SCL
+
