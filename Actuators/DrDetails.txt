@@ -1,0 +1,8 @@
+Power source details
+BHY411200400GS
+Input (PRI): 230-240 VAC, 50-60 Hz, 16W
+Output(SEC): 12 VDC, 400mA, --> 4.8W
+
+Motor:
+HRS-385S-12V
+DC 12V
